@@ -19,8 +19,6 @@ class AtorAdmin(admin.ModelAdmin):
 
 class GeneroAdmin(admin.ModelAdmin):
     list_display = ('nome',)
-    list_filter = ('nome',)
-
     search_fields = ['nome']
 
     fieldsets = (
@@ -32,8 +30,8 @@ class GeneroAdmin(admin.ModelAdmin):
 
 class FilmeAdmin(admin.ModelAdmin):
 
-    list_display = ('nome','imagem', 'get_atores', 'get_generos')
-    list_filter = ('nome',)
+    list_display = ('nome','display_image', 'get_atores', 'get_generos')
+    list_filter = ('atores__nome', 'generos__nome')
 
     search_fields = ['nome', 'atores__nome', 'generos__nome']
 
@@ -48,6 +46,17 @@ class FilmeAdmin(admin.ModelAdmin):
             'fields': ('generos',),
         }),
     )
+
+    def display_image(self, obj):
+        return '<img src="%s" width="200px"/>' % obj.imagem.url
+
+    display_image.allow_tags = True
+
+    def get_atores(self, obj):
+        return "\n".join([a.nome for a in obj.atores.all()])
+
+    def get_generos(self, obj):
+        return "\n".join([g.nome for g in obj.generos.all()])
 
 
 admin.site.register(Filme, FilmeAdmin)

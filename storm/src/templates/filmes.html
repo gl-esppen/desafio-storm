@@ -1,0 +1,7 @@
+<ul>
+{% for filme in filmes %}
+	<li>{{ filme }}</li>
+{% empty %}
+	<li>Nenhum filme encontrado.</li>
+{% endfor %}
+</ul>
