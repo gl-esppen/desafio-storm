@@ -1,2 +1,44 @@
-{{ filme }}
-{{ filme.get_filmes_relacionados }}
+{% extends 'base.html' %}
+
+{% block content %}
+	<h2 class="titulo_principal">{{ filme }}</h2>
+	<div class="detalhe_filme">
+
+		<div>
+			<h4>Sinopse:</h4>
+			<p>{{filme.sinopse}}</p>
+		</div>
+			
+		<div>
+			<img class="imagem_principal"src="{{ filme.imagem.url }}" alt="filmes/imagens/">
+		</div>
+
+<!-- Nao esta funcionando!-->	
+		<div>
+			<h4>Atores:</h4>
+			<p class="paragrafo_destaque">{{filme.atores.nome}}</p>
+		</div>
+
+		<div>
+			<h4>Gêneros:</h4>
+			<p class="paragrafo_destaque">{{filme.generos.nome}}</p>
+		</div>		
+<!-- END Nao esta funcionando!-->	
+	</div>
+
+
+	<h3 class="relacionados">Filmes Relacionados</h3>
+<!-- Nao esta funcionando!-->	
+	<div>
+		{% for filmes in filme.get_filmes_relacionados %}
+			<a href="{% url 'filme' filme.pk %}">
+				<img class="imagem_principal"src="{{ filme.imagem.url }}" alt="filmes/imagens/">
+			</a>
+<!-- END Nao esta funcionando!-->	
+		{% empty %}
+			<p>Não há filmes relacionados no momento</p>
+		{% endfor %}
+		
+	</div>
+
+{% endblock %}

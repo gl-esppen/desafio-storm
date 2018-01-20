@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Teste Storm</title>
+	<link rel="stylesheet" href="{% static 'css/storm.css'%}">
+	<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+</head>
+<body>
+	<header>
+		<nav class="menu_topo">
+			<a href="{% url 'filmes' %}">
+				<img class="menu" src="{% static '/img/home_button.png'%}">
+			</a>
+		</nav>
+	</header>
+	
+	<main>
+		{% block content %}
+		{% endblock %}
+	</main>
+	
+	<footer>
+		<p>Gláucia Esppenchutz</p>
+	</footer>
+
+	<script src="{% static 'js/storm.js' %}"></script>
+</body>
+</html>
