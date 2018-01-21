@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load template_extras %}
+
 {% block content %}
 	<section class="container detalhe_filme">
 		<div class="container keep-size">
@@ -14,10 +16,10 @@
 				<p>{{filme.sinopse}}</p>
 
 				<h3>Atores:</h3>
-				<p class="paragrafo_destaque">{{ filme.atores.all|join:', ' }}</p>
+				<p class="paragrafo_destaque">{{ filme.atores.all|join_hiperlink }}</p>
 
 				<h3>Gêneros:</h3>
-				<p class="paragrafo_destaque">{{ filme.generos.all|join:', ' }}</p>
+				<p class="paragrafo_destaque">{{ filme.generos.all|join_hiperlink }}</p>
 			</div>
 		</div>
 	</section>

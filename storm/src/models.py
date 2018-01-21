@@ -21,6 +21,9 @@ class Ator(models.Model):
             atores=self
         )[:20]
 
+    def get_absolute_url(self):
+        return '/ator/%i/' % self.pk
+
 
 class Genero(models.Model):
     nome = models.CharField(max_length=150, verbose_name='Nome')
@@ -31,6 +34,9 @@ class Genero(models.Model):
 
     def __unicode__(self):
         return self.nome
+
+    def get_absolute_url(self):
+        return '/?genero=%s' % self.pk
 
 
 class Filme(models.Model):
@@ -54,4 +60,5 @@ class Filme(models.Model):
         ).exclude(
             pk=self.pk
         )[:10]
+
 
