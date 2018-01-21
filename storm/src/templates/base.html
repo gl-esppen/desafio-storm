@@ -9,9 +9,9 @@
 </head>
 <body>
 	<header>
-		<nav class="menu_topo">
+		<nav class="menu_topo container">
 			<a href="{% url 'filmes' %}">
-				<img class="menu" src="{% static '/img/home_button.png'%}">
+				<img width="50px" src="{% static '/img/home_button.png'%}">
 			</a>
 		</nav>
 	</header>
@@ -20,10 +20,6 @@
 		{% block content %}
 		{% endblock %}
 	</main>
-	
-	<footer>
-		<p>Gláucia Esppenchutz</p>
-	</footer>
 
 	<script src="{% static 'js/storm.js' %}"></script>
 </body>

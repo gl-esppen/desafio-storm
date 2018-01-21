@@ -1,2 +1,41 @@
-{{ ator }}
-{{ ator.get_filmes_relacionados }}
+{% extends 'base.html' %}
+
+{% block content %}
+	<section class="container detalhe_filme">
+		<div class="container keep-size">
+			<div class="header_filmes container">
+				<h2 class="titulo">Atores</h2>
+			</div>
+			<div class="float-left imagem_filme">
+				<img class="imagem_principal" src="{{ ator.imagem.url }}" alt="{{ ator.nome }}" title="{{ ator.nome }}">	
+			</div>
+			<div class="float-right informacao_ator">
+				<h3>Ator</h3>
+				<p class="nome_ator">{{ ator }}</p>
+
+				<h3>País:</h3>
+				<p>{{ator.pais}}</p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container keep-size ">
+			<div class="container relacionados">
+				<h3 class="titulo_relacionados">Filmes Relacionados</h3>	
+			</div>
+			<ul class="listagem_relacionados keep-size">
+				{% for item in ator.get_filmes_relacionados %}
+					<li class="float-left ">
+						<a href="{% url 'filme' item.pk %}">
+							<img src="{{ item.imagem.url }}" alt="{{ item.nome }}" title="{{ item.nome }}"/>
+						</a>
+					</li>
+				{% empty %}
+					<li>Não há filmes relacionados no momento</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</section>
+
+{% endblock %}

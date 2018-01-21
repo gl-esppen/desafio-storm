@@ -1,44 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<h2 class="titulo_principal">{{ filme }}</h2>
-	<div class="detalhe_filme">
+	<section class="container detalhe_filme">
+		<div class="container keep-size">
+			<div class="header_filmes container">
+				<h2 class="titulo">{{ filme.nome }}</h2>
+			</div>
+			<div class="float-left imagem_filme">
+				<img class="imagem_principal" src="{{ filme.imagem.url }}" alt="filmes/imagens/">	
+			</div>
+			<div class="float-right informacao_filme">
+				<h3>Sinopse:</h3>
+				<p>{{filme.sinopse}}</p>
 
-		<div>
-			<h4>Sinopse:</h4>
-			<p>{{filme.sinopse}}</p>
+				<h3>Atores:</h3>
+				<p class="paragrafo_destaque">{{ filme.atores.all|join:', ' }}</p>
+
+				<h3>Gêneros:</h3>
+				<p class="paragrafo_destaque">{{ filme.generos.all|join:', ' }}</p>
+			</div>
 		</div>
-			
-		<div>
-			<img class="imagem_principal"src="{{ filme.imagem.url }}" alt="filmes/imagens/">
+	</section>
+
+	<section>
+		<div class="container keep-size ">
+			<div class="container relacionados">
+				<h3 class="titulo_relacionados">Filmes Relacionados</h3>	
+			</div>
+			<ul class="listagem_relacionados keep-size">
+				{% for item in filme.get_filmes_relacionados %}
+					<li class="float-left ">
+						<a href="{% url 'filme' item.pk %}">
+							<img src="{{ item.imagem.url }}" alt="{{ item.nome }}" title="{{ item.nome }}"/>
+						</a>
+					</li>
+				{% empty %}
+					<li>Não há filmes relacionados no momento</li>
+				{% endfor %}
+			</ul>
 		</div>
-
-<!-- Nao esta funcionando!-->	
-		<div>
-			<h4>Atores:</h4>
-			<p class="paragrafo_destaque">{{filme.atores.nome}}</p>
-		</div>
-
-		<div>
-			<h4>Gêneros:</h4>
-			<p class="paragrafo_destaque">{{filme.generos.nome}}</p>
-		</div>		
-<!-- END Nao esta funcionando!-->	
-	</div>
-
-
-	<h3 class="relacionados">Filmes Relacionados</h3>
-<!-- Nao esta funcionando!-->	
-	<div>
-		{% for filmes in filme.get_filmes_relacionados %}
-			<a href="{% url 'filme' filme.pk %}">
-				<img class="imagem_principal"src="{{ filme.imagem.url }}" alt="filmes/imagens/">
-			</a>
-<!-- END Nao esta funcionando!-->	
-		{% empty %}
-			<p>Não há filmes relacionados no momento</p>
-		{% endfor %}
-		
-	</div>
-
+	</section>
 {% endblock %}

@@ -6,6 +6,7 @@ from django.db import models
 
 class Ator(models.Model):
     nome = models.CharField(max_length=150, verbose_name='Nome')
+    imagem = models.ImageField(upload_to='atores/imagens/', verbose_name='Imagem', default='atores/imagens/no_image.png')
     pais = models.CharField(max_length=150, verbose_name='País')
 
     class Meta:
@@ -35,7 +36,7 @@ class Genero(models.Model):
 class Filme(models.Model):
     nome = models.CharField(max_length=150, verbose_name='Nome')
     sinopse = models.TextField(verbose_name='Sinopse')
-    imagem = models.ImageField(upload_to='filmes/imagens/', verbose_name='Imagem')
+    imagem = models.ImageField(upload_to='filmes/imagens/', verbose_name='Imagem', default='filmes/imagens/no_image.png')
     atores = models.ManyToManyField(Ator, verbose_name='Atores')
     generos = models.ManyToManyField(Genero, verbose_name='Generos')
 

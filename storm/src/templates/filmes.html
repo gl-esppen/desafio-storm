@@ -1,19 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<div class="titulo_principal">
-		<h2>{{ page_title|default:'Listagem de filmes' }}</h2>
+	<div class="header_filmes container">
+		<h2 class="titulo">{{ page_title|default:'Listagem de filmes' }}</h2>
 		<select class="filtro" name="ordem">
 			<option>Ordenar por:</option>
 			<option value="ASC">Ordem alfabética</option>
 			<option value="DESC">Ordem alfabética inversa</option>
 		</select>
 	</div>
+	<div class="filmes container">
+		<ul class="listagem">
 		{% for filme in filmes %}
-			<a href="{% url 'filme' filme.pk %}">
-				<img class="imagem_principal"src="{{ filme.imagem.url }}" alt="filmes/imagens/">
-			</a>
+			<li>
+				<a href="{% url 'filme' filme.pk %}"><img src="{{ filme.imagem.url }}" alt="filmes/imagens/"></a>
+			</li>
 		{% empty %}
 			<li>Nenhum filme encontrado.</li>
 		{% endfor %}
+		</ul>
+	</div>
 {% endblock %}
