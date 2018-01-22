@@ -4,5 +4,6 @@
 **/*.sqlite
 **/*.sqlite3
 
-media/
+storm/media/
+storm/static/
 
