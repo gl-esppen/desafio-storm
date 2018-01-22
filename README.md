@@ -1,5 +1,5 @@
 # Desafio Storm Security
--------------------------
+
 
 Projeto para resolução do desafio back-end developer proposto pela Storm Security.
 
@@ -12,17 +12,26 @@ Projeto para resolução do desafio back-end developer proposto pela Storm Secur
 
 * Recomenda-se utilizar o virtualenvwrapper para trabalhar melhor no projeto:
 
+
     $ pip install virtualenvwrapper
+
     $ /usr/local/bin/virtualenvwrapper.sh 
+
     $ echo "export WORKON_HOME=~/.virtualenvs" >> ~/.bash_profile
+
     $ echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bash_profile 
+
     $ source ~/.bash_profile  
+
 
 
 * Após fazer a instalação, podemos seguir com o setup do ambiente e a instalação dos pacotes necessários:
 
+
     $ mkvirtualenv storm
+
     $ workon storm
+
     $ make install
    
 
@@ -33,7 +42,7 @@ Projeto para resolução do desafio back-end developer proposto pela Storm Secur
 
 ## Acessando Django API REST:
 
-######Urls base:
+###### Urls base:
 * /api/filmes/
 * /api/ator/
 * /api/genero/
