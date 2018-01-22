@@ -1,0 +1,147 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial;
+	list-style: none;
+	box-sizing: border-box;
+	font-weight: normal;
+}
+
+body{ font-size: 10px; }
+header{ background: #000; }
+section{ clear: both; margin-bottom: 20px; }
+
+.float-left{ float: left; }
+.float-right{ float: right; }
+.keep-size{ overflow: hidden; }
+
+.container{
+	width: 1024px;
+	margin: 0 auto;
+}
+
+.detalhe_filme{
+	overflow: hidden;
+	border-bottom: 1px solid #eae8e8;
+	padding: 0 0 10px;
+	margin-bottom:  50px;
+}
+
+.header_filmes{
+	overflow: hidden;
+	border-bottom: 1px solid #999;
+	padding: 10px 0 10px 0 ;
+	margin-bottom:  10px;
+}
+
+.header_filmes .titulo{ 
+	color: #999;
+	font-size: 2.5em;
+	float: left;
+}
+
+.header_filmes .filtro{
+	float: right;
+}
+
+.filmes .listagem{
+	overflow: hidden;
+}
+
+.filmes .listagem li{
+	float: left;
+	margin: 5px;
+	width: 19%;
+	overflow: hidden;
+	height: auto;
+}
+
+.filmes .listagem li a{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.filmes .listagem li a img{
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	height: auto;
+}
+
+.imagem_filme{
+	width: 20%;
+	height: auto;
+}
+
+.imagem_principal{
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.informacao_filme{
+	width: 78%;
+	height: auto;
+}
+
+.informacao_filme h3{
+	color: #848484;
+	padding: 0 0 3px 0;
+}
+
+.informacao_filme p{
+	padding: 0 0 10px 0;
+	width: 50%;
+}
+
+.relacionados{
+	border-bottom: 1px solid #999;
+	padding: 0 0 10px 0;
+	margin-bottom: 10px;
+}
+
+.relacionados .titulo_relacionados{
+	color: #999;
+	font-size: 1.9em;
+}
+
+.paragrafo_destaque a{
+	color: #db4848;
+}
+
+.listagem_relacionados li{
+	width: calc(20% - 10px);
+	margin: 0px 10px 10px 0px;
+}
+
+.listagem_relacionados li a img{
+	width: 100%;
+	height: auto;
+	display: block;	
+}
+
+.informacao_ator{
+	width: 78%;
+	height: auto;
+}
+
+.informacao_ator h3{
+	color: #848484;
+	font-size: 1.2em;
+	padding: 0 0 5px 0;
+}
+
+.informacao_ator h3 span{
+	color: #000;
+	font-size: 0.9em;
+	font-weight: 100;
+}
+
+.informacao_ator .nome_ator{
+	font-size: 2.5em;
+	padding: 0 0 20px 0;
+}
+
+
+
