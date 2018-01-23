@@ -12,7 +12,7 @@ class AtorAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ('Dados do Ator', {
-            'fields': ('nome', 'pais'),
+            'fields': ('nome', 'pais', 'imagem'),
         }),
     )
 
