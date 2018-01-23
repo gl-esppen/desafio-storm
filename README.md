@@ -47,6 +47,27 @@ Projeto para resolução do desafio back-end developer proposto pela Storm Secur
 * /api/genero/
 
 
+## Ambiente de Homologação
+
+Foi levantando uma microintancia dentro do ambiente da AWS, utilizando o pacote de estudante. Por conta disso não foi possível configurar o ambiente para o RDS, S3, Load Balance e Auto Scaling.
+
+Endereço IP : http://54.245.36.52/
+
+Foi utilizado o NGINX e o gunicorn para colocar o serviço no ar.
+
+##### Comandos basicos de monitoramento gunicorn
+* sudo service gunicorn status
+* sudo service gunicorn start
+* sudo service gunicorn stop
+
+
+##### Comandos basicos de monitoramento nginx
+* sudo service nginx status
+* sudo service nginx start
+* sudo service nginx stop
+
+
+
 ## Sugestão de Arquitetura:
 
 * Configurando o sistema 
@@ -77,26 +98,6 @@ Ferramenta para automação de deploys.
 
 - CloudWatch
     Monitoramento das máquinas de processos com alertas personalizados (Ex: Database CPU)
-
-
-## Ambiente de Homologação
-
-Foi levantando uma microintancia dentro do ambiente da AWS, utilizando o pacote de estudante. Por conta disso não foi possível configurar o ambiente para o RDS, S3, Load Balance e Auto Scaling.
-
-Endereço IP : http://54.245.36.52/
-
-Foi utilizado o NGINX e o gunicorn para colocar o serviço no ar.
-
-##### Comandos basicos de monitoramento gunicorn
-* sudo service gunicorn status
-* sudo service gunicorn start
-* sudo service gunicorn stop
-
-
-##### Comandos basicos de monitoramento nginx
-* sudo service nginx status
-* sudo service nginx start
-* sudo service nginx stop
 
 
 
